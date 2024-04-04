@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연세대 약학대학 커뮤니티</title>
+    <style>
+        body{text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>연세대 약학대학 커뮤니티</h1>
+    <hr>
+    <div>
+        <p>전체 게시물 수: {{post_num}}</p>
+        <br>
+        {% for post in posts %}
+            <h2>{{post.title}}</h2>
+            <p>작성자: {{post.writer}}</p>
+            <p>{{post.summary}}</p>
+            <a href="{%url 'detail' post.id %}">더보기</a>
+            <hr>
+        {% endfor %}
+    </div>
+    <p><a href="{%url 'new' %}">게시물 작성</a></p>
+</body>
+</html>
